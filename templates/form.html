@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Bank Indicator Lookup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            padding: 40px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            margin-top: 15px;
+        }
+
+        .btn-light {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .btn-light:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2 class="text-center">World Bank Indicator Lookup</h2>
+    <form method="post" action="/">
+        <label for="country">Country Code (e.g., US, IN, BR):</label>
+        <input type="text" id="country" name="country" class="form-control" required>
+
+        <label for="indicator">Select Indicator:</label>
+        <select id="indicator" name="indicator" class="form-select" required>
+            <option value="SP.POP.TOTL">Total Population</option>
+            <option value="NY.GDP.MKTP.CD">GDP (current US$)</option>
+            <option value="NY.GNP.PCAP.CD">GNI per capita</option>
+            <option value="EN.ATM.CO2E.PC">CO2 emissions (metric tons per capita)</option>
+            <option value="SH.XPD.CHEX.PC.CD">Health Expenditure per Capita</option>
+            <option value="SE.PRM.ENRR">Primary school enrollment (%)</option>
+            <option value="SP.DYN.LE00.IN">Life expectancy at birth</option>
+            <option value="SL.UEM.TOTL.ZS">Unemployment, total (% of total labor force)</option>
+            <option value="SH.MED.BEDS.ZS">Hospital beds per 1,000 people</option>
+            <option value="IT.NET.USER.ZS">Internet users (% of population)</option>
+            <option value="EG.USE.ELEC.KH.PC">Electric power consumption (kWh per capita)</option>
+            <option value="SH.XPD.CHEX.GD.ZS">Current health expenditure (% of GDP)</option>
+        </select>
+
+        <label for="years">Number of Years to Retrieve:</label>
+        <input type="number" id="years" name="years" class="form-control" min="1" max="50" value="10" required>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-light">Fetch Data</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
